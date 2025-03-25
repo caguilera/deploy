@@ -20,7 +20,7 @@ spec:
           - name: MONGODB_DB
             value: admin_demo
           - name: MONGODB_HOST
-            value: mymongodb.mongodb.svc.cluster.local
+            value: 10.107.168.3
           - name: MONGODB_PORT
             value: '27017' 
           - name: MONGODB_USERNAME
@@ -28,4 +28,4 @@ spec:
           - name: MONGODB_PASSWORD
             value: admin_demo
         ports:
-        - containerPort: 80
+        - containerPort: 8000

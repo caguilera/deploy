@@ -3,12 +3,16 @@ kind: Ingress
 metadata:
   name: admin-demo
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx-example
   rules:
   - http:
       paths:
-        - path: /admin
-          backend:
-            serviceName: admin-demo
-            servicePort: 80
+      - path: /admin
+        pathType: Prefix
+        backend:
+          service:
+            name: admin-demo
+            port:
+              number: 8000
