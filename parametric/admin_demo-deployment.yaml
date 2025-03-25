@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parametric
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      run: parametric
+  template:
+    metadata:
+      labels:
+        run: parametric
+    spec:
+      containers:
+      - image: docker.io/caguilsepulveda/parametric:develop-292f46d
+        name: parametric
+        ports:
+        - containerPort: 80
+        
