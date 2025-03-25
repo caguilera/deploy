@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Ingress
+metadata:
+  name: admin-demo
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /admin
+          backend:
+            serviceName: admin-demo
+            servicePort: 80
