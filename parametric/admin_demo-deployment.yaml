@@ -14,7 +14,7 @@ spec:
         run: parametric
     spec:
       containers:
-      - image: docker.io/caguilsepulveda/parametric:develop-292f46d
+      - image: docker.io/caguilsepulveda/parametric:develop-3f7dba3
         name: parametric
         ports:
         - containerPort: 80
