@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: admin_demo
+  name: admin-demo
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: admin_demo
+      app: admin-demo
   template:
     metadata:
       labels:
-        app: admin_demo
+        app: admin-demo
     spec:
       containers:
       - image: docker.io/caguilsepulveda/admin_demo:develop-67b5ad4
-        name: admin_demo
+        name: admin-demo
         env:
           - name: MONGODB_DB
             value: admin_demo
           - name: MONGODB_HOST
-            value: mongodb.mymongodb
+            value: mymongodb.mongodb.svc.cluster.local
           - name: MONGODB_PORT
             value: '27017' 
           - name: MONGODB_USERNAME
